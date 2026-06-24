@@ -128,3 +128,130 @@ See [`requirements.txt`](requirements.txt) for pinned versions:
 | SQLAlchemy | Database access |
 | requests | HTTP client for OMDb |
 | python-dotenv | Load API key from `.env` |
+
+
+===============================================
+
+===============================================  
+## Further improvements TODO:  
+Bonus - User Profiles  
+Why Add User Profiles?  
+So far, all movies are stored in one big list, meaning everyone shares the same movie database.
+But what if multiple users want to use our app and John, Sara, and Jack all have different tastes? What if Sara wants a separate list from Jack’s?  
+💡 By adding user profiles, each user gets their own personalized movie library!  
+### How Will It Work?  
+ - When starting the app, the user will select a profile (or create a new one).
+ - Each user’s movies are separate from other users’ movies.
+ - When listing movies, only the movies from the selected user are displayed.
+ - When generating the website we can save it as e.g. “John.html”
+### Example in the Terminal
+Let’s say the app starts, and Sara logs in:
+
+Welcome to the Movie App! 🎬
+
+Select a user:
+1. John
+2. Sara
+3. Jack
+4. Create new user
+
+Enter choice: 2
+Now, when Sara adds a movie, it’s stored in her personal movie list.
+
+Enter new movie name: Titanic
+
+✅ Movie 'Titanic' added to Sara's collection!
+When John logs in, he won’t see Sara’s movies:
+
+Welcome back, John! 🎬
+
+1. List movies
+2. Add movie
+3. Delete movie
+4. Update movie
+5. Switch user
+
+Enter choice: 1
+
+📢 John, your movie collection is empty. Add some movies!  
+### Hints on How This Works
+#### How does the app know which user is logged in?
+ - The app keeps track of the active user (maybe storing their name in a variable).
+ - Before listing, adding, or updating movies, the app checks which user is active.
+#### How are movies stored separately?
+ - Each movie is linked to a specific user.
+ - This means we also need a user table.
+ - The movies table keeps a foreign key user_ID for each movie, so the app only fetches movies for the logged-in user.
+
+#### How do users switch profiles?
+ - The app shows a list of users and lets them pick one.
+ - It then updates the active user so all future actions apply only to their movie collection.
+### Why This is Cool
+ - Users don’t see each other’s movies.
+ - Each user has a customized movie list.
+ - Makes the app feel personalized and user-friendly.
+
+
+
+## Bonus - Update Notes Feature
+Bonus Step
+This is a bonus step, you can skip it if you want.
+Specification
+Implement the update feature so it adds notes to a movie.
+When a users click on the “update” command in the menu, they are prompted with a movie name, followed by a note:
+
+Menu:
+...
+4. Update movie
+...
+
+Enter choice (0-9): 4
+
+Enter movie name: Titanic
+Enter movie note: My favorite movie!
+Movie Titanic successfully updated
+The command adds a note to the movie in the database.
+The note should be displayed also in the website. When the users hover (with the mouse) the movie poster, the note should be displayed, in any way that you want.
+For example:
+.guides/img/titanic_notes
+
+
+
+
+## Bonus - Rating
+Bonus Step
+This is a bonus step, you can skip it if you want.
+Specification
+Right now the rating is not displayed. Add the rating for each movie, it can be displayed in any way you want in the website.
+
+
+
+## Bonus - IMDB Link
+Bonus Step
+This is a bonus step, you can skip it if you want.
+Specification
+When the users click on the movie’s poster, they are transferred to the movie’s page in IMDB.
+
+
+## Bonus - Many Movies
+Bonus Step
+This is a bonus step, you can skip it if you want.
+Specification
+What happens when you add 20 movies to your application? The website does not look good.
+Change the CSS/HTML of the website so it displays it in a pleasant format.
+
+
+## Bonus - Country's Flag
+Bonus Step
+This is a bonus step, you can skip it if you want.
+Specification
+Next to each movies, display a little flag that indicates the origin country of the movie.
+Hint
+Use another API to get an emoji/image of the correct flag.
+
+## Bonus - Choose Your Own Feature
+Bonus Step
+This is a bonus step, you can skip it if you want.
+Specification
+Explore new features, be wild! Add something close to your heart to your application.
+It can be an improvement of the styling, communication with another API, improved CLI menu and many more.
