@@ -1,8 +1,10 @@
 from sqlalchemy import create_engine, text
 from fetching_movies_data import fetch_data
+from pathlib import Path
 
-# Define the database URL
-DB_URL = "sqlite:///movies.db"
+BASE_DIR = Path(__file__).parent.parent
+DB_URL = f"sqlite:///{BASE_DIR / 'data' / 'movies.db'}"
+
 
 # Create the engine
 engine = create_engine(DB_URL, echo=False)  # echo is good when Debugging

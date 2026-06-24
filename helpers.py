@@ -1,5 +1,7 @@
 import random
-import os
+from pathlib import Path
+
+BASE_DIR = Path(__file__).parent
 
 
 # Stats helper =========================================================================
@@ -141,7 +143,8 @@ def replace_html_data(template: str, new_header, new_text):
 # reading data ===============================================================================
 
 def get_template_html():
-    with open(os.path.join("_static", "index_template.html"), "r", encoding='utf-8', newline='') as source:
+    template_path = BASE_DIR / "_static" / "index_template.html"
+    with open(template_path, "r", encoding='utf-8', newline='') as source:
         return source.read()
 
 
@@ -149,5 +152,6 @@ def get_template_html():
 
 def save_data(file_path, text):
     """ Save data to HTML file """
-    with open(os.path.join('.', '_static', file_path), 'w', encoding='utf-8', newline='') as target:
+    save_path = BASE_DIR / "_static" / file_path
+    with open(save_path, 'w', encoding='utf-8', newline='') as target:
         target.write(text)
