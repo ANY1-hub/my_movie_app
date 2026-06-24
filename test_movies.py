@@ -1,6 +1,6 @@
 import pytest
 import requests
-from movies import *
+from app import *
 
 
 # ====================== calculate_average ======================

@@ -78,7 +78,7 @@ target/
 celerybeat-schedule
 
 # dotenv
-.env
+config/.env
 
 # virtualenv
 venv/
@@ -186,7 +186,7 @@ fabric.properties
 .idea
 
 # DB of this project
-movies.db
+data/movies.db
 
 # Generated index.html of this project
 index.html

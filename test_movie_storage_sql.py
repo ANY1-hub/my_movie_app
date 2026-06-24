@@ -1,5 +1,5 @@
 import pytest
-from movie_storage_sql import *
+from storage.movie_storage_sql import *
 
 
 # ====================== calculate_average ======================

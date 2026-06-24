@@ -1,9 +1,13 @@
 import os
 import requests
 import sys
+from pathlib import Path
 from dotenv import load_dotenv
 
 load_dotenv()
+
+BASE_DIR = Path(__file__).parent
+load_dotenv(BASE_DIR / "config" / ".env")
 
 API_KEY = os.getenv('OMDB_API_KEY')
 if not API_KEY: API_KEY = ''

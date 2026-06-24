@@ -1,7 +1,7 @@
-import movie_storage_sql as storage
+from storage import movie_storage_sql as storage
 from helpers import *
-from movie_storage_sql import is_in_movies
-import colors
+from storage.movie_storage_sql import is_in_movies
+from config import colors
 
 
 # Menu Item functions ====================================================================
