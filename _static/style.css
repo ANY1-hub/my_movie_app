@@ -1,0 +1,69 @@
+body {
+    background: #F5F5F0;
+    color: F5F5F0;
+    font-family: "Courier New", Courier, Monaco, sans-serif;
+}
+
+.list-movies-title {
+    padding: 10px 0;
+    background: #009B50;
+    color: white;
+    text-align: center;
+    font-size: 16pt;
+}
+
+.movie-grid {
+    list-style-type: none;
+    padding: 2rem;
+    margin: 20px 0 0;
+    display: flex;
+    background: #333;
+    justify-self: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    overflow: auto;
+    gap: 2rem;
+    max-width: 50rem;
+    text-align: center;
+}
+
+.movie-grid li {
+    padding: 10px 15px;
+    text-align: left;
+}
+
+.movie {
+    width: 140px;
+    text-align: center;
+}
+
+.movie-title,
+.movie-year,
+.movie-rating {
+    font-size: 0.8em;
+    text-align: center;
+    font-weight: bold;
+}
+
+.movie-year,
+.movie-rating {
+    color: #e0e0e0;
+}
+
+.movie-title {
+    margin-top: 10px;
+}
+
+.movie-year,
+.movie-rating {
+    color: #999;
+}
+
+
+.movie-poster {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    width: 128px;
+    height: 193px;
+    display: block;
+    margin: 0 auto;
+}
